@@ -7,7 +7,7 @@ import org.junit.Test;
 public class ViewGameTest {
 
     @Test
-    public void testDisplayMessageWelcome() {
+    public void testGame() {
 
     }
 }
