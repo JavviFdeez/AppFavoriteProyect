@@ -18,10 +18,10 @@ public class ViewGame implements IViewGame {
         System.out.println("                    \uD83C\uDFAE \uD83D\uDD79️ !BIENVENIDOS AL MENU GAME¡ \uD83C\uDFAE \uD83D\uDD79              ");
         System.out.println("╠════════════════════════════════════════════════════════════════════════════╣");
         System.out.println("                   \uD83D\uDD79️  Bienvenido al Gestor de Juegos \uD83D\uDD79️              ");
-        System.out.println("          \uD83C\uDFAE Listar: Descubre nuevos títulos y revisa tus favoritos \uD83C\uDFAE               ");
-        System.out.println("             \uD83D\uDD0D Buscar: Encuentra rápidamente lo que estás buscando \uD83D\uDD0D");
-        System.out.println("                   \uD83D\uDCE5 Insertar: Agrega tus propios juegos \uD83D\uDCE5");
-        System.out.println("      \uD83D\uDDD1 Borrar: Elimina juegos que ya no forman parte de tu repertorio \uD83D\uDDD1");
+        System.out.println("      \uD83C\uDFAE Listar: Descubre nuevos títulos y revisa tus favoritos");
+        System.out.println("      \uD83D\uDD0D Buscar: Encuentra rápidamente lo que estás buscando");
+        System.out.println("      \uD83D\uDCE5 Insertar: Agrega tus propios juegos");
+        System.out.println("      \uD83D\uDDD1 Borrar: Elimina juegos que ya no forman parte de tu repertorio");
         System.out.println("╠════════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║                                                     [App Favorite Proyect.]║");
         System.out.println("╚════════════════════════════════════════════════════════════════════════════╝");
@@ -61,8 +61,8 @@ public class ViewGame implements IViewGame {
                 if (attempt < maxAttempts) {
                     System.out.println("Inténtalo de nuevo.");
                 } else {
-                    System.out.println("Has agotado los intentos. Adiós.");
-                    // Puedes decidir qué hacer después de agotar los intentos, por ejemplo, cerrar la aplicación.
+                    System.out.println("Has agotado los intentos.");
+                    displayMessageGoodbye();
                 }
             }
         }

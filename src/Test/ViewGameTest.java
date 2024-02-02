@@ -7,13 +7,12 @@ import org.junit.Test;
 public class ViewGameTest {
 
     @Test
-    public void testDisplayMessageWelcome() {
+    public void testGame() {
         // Crear una instancia de ViewGame y llamar al método a probar
         IViewGame viewGame = new ViewGame();
-        // viewGame.displayMessageWelcome();
+         viewGame.displayMessageWelcome();
         // viewGame.displayMenuGame();
         // viewGame.displayMessageGoodbye();
-
     }
 }
 
