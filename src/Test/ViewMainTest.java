@@ -10,5 +10,6 @@ public class ViewMainTest {
         viewMain.Welcome();
         // viewGame.displayMenuGame();
         // viewGame.displayMessageGoodbye();
+        viewMain.Menu();
     }
 }
