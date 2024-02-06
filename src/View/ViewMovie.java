@@ -1,6 +1,7 @@
 package View;
 
 import Interface.View.IViewMovie;
+import Utils.Utils;
 
 import javax.swing.*;
 
@@ -51,11 +52,12 @@ public class ViewMovie implements IViewMovie {
         System.out.println("╚══════════════════════════════════════╝");
 
         int maxAttempts = 3;
+        Utils utils = new Utils();
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
             String userInput = JOptionPane.showInputDialog(null, "· Selecciona una opción (Intento " + attempt + " de " + maxAttempts + "):");
 
-            if (isValidOption(userInput)) {
-                handleUserInput(userInput);
+            if (utils.isValidOption(userInput)) {
+                utils.handleUserInput();
                 break; // Salir del bucle si la opción es válida
             } else {
                 System.out.println("❌ Opción no válida. Por favor, ingresa un número entre 1 y 5.");
@@ -63,29 +65,12 @@ public class ViewMovie implements IViewMovie {
                     System.out.println("Inténtalo de nuevo.");
                 } else {
                     System.out.println("Has agotado los intentos.");
-                    displayMessageGoodbye();
                 }
             }
         }
     }
 
-    // Metodo Valida Opción
-    private boolean isValidOption(String userInput) {
-        try {
-            int option = Integer.parseInt(userInput);
-            return option >= 1 && option <= 5;
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
-
-    // Metodo maneja la entrada del usuario
-    private void handleUserInput(String userInput) {
-        int option = Integer.parseInt(userInput);
-        System.out.println("Has seleccionado la opción " + option);
-        // Realizar acciones según la opción seleccionada
-    }
 
 
     /**

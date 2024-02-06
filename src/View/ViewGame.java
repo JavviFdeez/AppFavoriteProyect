@@ -3,6 +3,7 @@ package View;
 import Interface.View.IViewGame;
 
 import javax.swing.*;
+import Utils.Utils;
 
 public class ViewGame implements IViewGame {
 
@@ -51,38 +52,22 @@ public class ViewGame implements IViewGame {
         System.out.println("╚══════════════════════════════════════╝");
 
         int maxAttempts = 3;
+        Utils utils = new Utils();
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
             String userInput = JOptionPane.showInputDialog(null, "· Selecciona una opción (Intento " + attempt + " de " + maxAttempts + "):");
 
-            if (isValidOption(userInput)) {
-                handleUserInput(userInput);
+            if (utils.isValidOption(userInput)) {
+                utils.handleUserInput();
                 break; // Salir del bucle si la opción es válida
             } else {
                 System.out.println("❌ Opción no válida. Por favor, ingresa un número entre 1 y 5.");
                 if (attempt < maxAttempts) {
-                    System.out.println("Inténtalo de nuevo.");
+                    System.out.println("\uD83D\uDD04 Inténtalo de nuevo.");
                 } else {
-                    System.out.println("Has agotado los intentos.");
+                    System.out.println("❌ Has agotado los intentos.");
                 }
             }
         }
-    }
-
-    // Metodo Valida Opción
-    private boolean isValidOption(String userInput) {
-        try {
-            int option = Integer.parseInt(userInput);
-            return option >= 1 && option <= 5;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-
-    // Metodo maneja la entrada del usuario
-    private void handleUserInput(String userInput) {
-        int option = Integer.parseInt(userInput);
-        System.out.println("Has seleccionado la opción " + option);
     }
 
 
