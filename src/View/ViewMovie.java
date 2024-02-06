@@ -21,6 +21,7 @@ public class ViewMovie implements IViewMovie {
         System.out.println("      \uD83C\uDFAE Listar: Descubre nuevos títulos y revisa tus favoritos               ");
         System.out.println("      \uD83D\uDD0D Buscar: Encuentra rápidamente lo que estás buscando ");
         System.out.println("      \uD83D\uDCE5 Insertar: Agrega tus propias películas ");
+        System.out.println("      \uD83D\uDD04 Actualizar: Actualiza las películas que desee");
         System.out.println("      \uD83D\uDDD1 Borrar: Elimina películas que ya no forman parte de tu repertorio ");
         System.out.println("╠════════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║                                                     [App Favorite Proyect.]║");

@@ -10,8 +10,8 @@ public class ViewSongTest {
     public void testSong() {
         // Crear una instancia de ViewGame y llamar al método a probar
         IViewSong viewSong = new ViewSong();
-        // viewSong.displayMessageWelcome();
-        // viewSong.displayMenuSong();
-         viewSong.displayMessageGoodbye();
+        viewSong.displayMessageWelcome();
+        viewSong.displayMenuSong();
+        viewSong.displayMessageGoodbye();
     }
 }
