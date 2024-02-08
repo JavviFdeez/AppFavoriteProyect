@@ -25,24 +25,10 @@ public class ViewMain implements IViewMain {
         System.out.println("║          === MENÚ Principal ===      ║");
         System.out.println("║ = [1]. Muestra lista de Favoritos \uD83D\uDCDC ║");
         System.out.println("║ == [2].  Apartado Peliculas \uD83C\uDFAC       ║");
-        System.out.println("║ === [3].  Apartado Game\uD83D\uDD79           ║");
-        System.out.println("║ ==== [4].  Apartado Canciones \uD83D\uDFB5      ║");
+        System.out.println("║ === [3].  Apartado Game\uD83C\uDFAE            ║");
+        System.out.println("║ ==== [4].  Apartado Canciones \uD83C\uDFB5     ║");
         System.out.println("║ ===== [5].  Salir de la app \uD83D\uDEAA       ║");
         System.out.println("╚══════════════════════════════════════╝");
     }
 
-    @Override
-    public void createMovie() {
-
-    }
-
-    @Override
-    public void createGame() {
-
-    }
-
-    @Override
-    public void createSong() {
-
-    }
 }
