@@ -2,6 +2,6 @@ package Interface.Controller;
 
 public interface IControllerMain {
     void Empezar();
-    void Menus();
+    void Menus(int op);
     void Finalizar();
 }
