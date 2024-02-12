@@ -4,9 +4,6 @@ import Interface.Controller.IControllerMain;
 import Model.Library.Library;
 import Utils.Utils;
 import View.ViewMain;
-import View.ViewMovie;
-
-import javax.swing.*;
 
 public class ControllerMain implements IControllerMain {
     ViewMain view = new ViewMain();
@@ -28,16 +25,19 @@ public class ControllerMain implements IControllerMain {
     public void Menus(int op) {
         switch (op){
             case 1:
-
+                //library.fingAll();
                 break;
             case 2:
-                ViewMovie vip =new ViewMovie();
+                ControllerViewMovie movie = new ControllerViewMovie();
+                //movie.ControllerViewMovie();
                 break;
             case 3:
-                ViewMovie vig =new ViewMovie();
+                ControllerViewGame game = new ControllerViewGame();
+                //game.ControllerViewGame();
                 break;
             case 4:
-                ViewMovie vic =new ViewMovie();
+                ControllerViewSong song = new ControllerViewSong();
+                //song.ControllerViewSong();
                 break;
             default:
                 System.out.println("EL numero introducido no es correcto, por favor introduzca uno de nuevo");
