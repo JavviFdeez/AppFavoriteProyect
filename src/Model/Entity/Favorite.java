@@ -64,39 +64,11 @@ public class Favorite {
 
     @Override
     public String toString() {
-        return "Favorite{" + super.toString() +
-                "id=" + id +
+        return "Favorite{" + "id=" + id +
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
-                '}';
+                '}' +'\n';
     }
 
-
-    public Movie createFavoriteMovie(int duration, String company) {
-        return new Movie(id ,name, category, genre, duration, company);
-    }
-    public Song createFavoriteSong(int duration, String nameArtist) {
-        return new Song(id ,name, category,genre , duration, nameArtist);
-    }
-    public Game createFavoriteGame(String company, int price) {
-        return new Game(id ,name, category, genre, company, price);
-    }
-
-    public void dateCreate(int i,int n, String s){          //n es significado numero y s String
-        switch (category){
-            case "song":
-            case "Song":
-                createFavoriteSong(n, s);
-                break;
-            case "movie":
-            case "Movie":
-                createFavoriteMovie(n, s);
-                break;
-            case "game":
-            case "Game":
-                createFavoriteGame(s, n);
-                break;
-        }
-    }
 }
 

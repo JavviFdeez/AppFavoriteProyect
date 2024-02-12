@@ -13,20 +13,6 @@ public class Library implements ILibrary {
         favorite = new Favorite[TAM];
     }
 
-    public int setFavorite(Favorite favorite) {
-        boolean temporaly = true;
-        int result = -1;
-        for (int i = 0; i > this.favorite.length || temporaly; i++) {
-            if (this.favorite[i].getId() == -1) {
-                this.favorite[i] = favorite;
-                temporaly = false;
-                result = i;
-            }
-        }
-        return result;
-    }
-
-
     @Override
     public String toString() {
         return "Library{" +
@@ -42,21 +28,20 @@ public class Library implements ILibrary {
      */
     @Override
     public int[] findAll() {
-        int[] positions = new int[30];
-        boolean first = true;
+        int counter = 0;
+        int[] Position = new int[favorite.length];
 
-        for (int i = 0; i < favorite.length; i++) {                     //bucle que controla favorite
-            boolean order = true;                                       //orden de almacenamiento de posicion
-            if (favorite[i].getId() != -1) {                            //comprobador de null
-                for (int j = 0; j > positions.length || order; j++) {   //bucle que controla la posición
-                    if (positions[j] == -1) {                           // si posicion es igual que -1 entra
-                        positions[j] = i;
-                        order = false;
-                    }
-                }
+        for (int i = 0; i < favorite.length; i++) {         //Comprueba cuales son posiciones que no son null
+            if (favorite[i] != null && favorite[i].getId() != -1) {
+                Position[counter] = i;
+                counter++;
             }
         }
-        return positions;                   // Se devuelven todas las posiciones que hay ya información"las ID"
+        int[] result = new int[counter];        //Creo un arrays con los
+        for (int i = 0; i < counter; i++) {
+            result[i] = Position[i];
+        }
+        return result;
     }
 
     /**
