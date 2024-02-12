@@ -1,5 +1,6 @@
 package View;
 
+<<<<<<< HEAD
 import Interface.View.IViewGame;
 
 import javax.swing.*;
@@ -95,3 +96,7 @@ public class ViewGame implements IViewGame {
         System.out.println();
     }
 }
+=======
+public class ViewGame {
+}
+>>>>>>> 453076fee678a5693288956c6a3ce4feebcda78b

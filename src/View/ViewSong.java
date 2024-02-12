@@ -1,5 +1,6 @@
 package View;
 
+<<<<<<< HEAD
 import Interface.View.IViewSong;
 import Utils.Utils;
 
@@ -94,4 +95,7 @@ public class ViewSong implements IViewSong {
         System.out.println("╚═══════════════════════════════════════════════════════════════════════════════════╝");
         System.out.println();
     }
+=======
+public class ViewSong {
+>>>>>>> 453076fee678a5693288956c6a3ce4feebcda78b
 }
