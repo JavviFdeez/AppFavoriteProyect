@@ -3,46 +3,35 @@ package Model.Library;
 import Interface.Library.ILibrary;
 import Model.Entity.Favorite;
 
-public class Library<T> implements ILibrary {
-    private Favorite[] favorite = new Favorite[30];
+import java.util.Arrays;
+
+public class Library implements ILibrary {
+    private static final int TAM = 30
+    private Favorite[] favorite;
+
+    public Favorite[] Library() {
+        favorite = new Favorite[TAM];
+    }
+
+    public int setFavorite(Favorite favorite) {
+        boolean temporaly = true;
+        int result = -1;
+        for (int i = 0; i > this.favorite.length || temporaly; i++) {
+            if (this.favorite[i].getId() == -1) {
+                this.favorite[i] = favorite;
+                temporaly = false;
+                result = i;
+            }
+        }
+        return result;
+    }
+
 
     @Override
-    public void crud(int option) {
-        switch (option) {
-            case 1:
-                findAll();
-                break;
-            case 2:
-                /*Por que carcateristica quieres buscar "Apartado tambien de la vista". esto tambien devuelve una opcion*/
-                int searchedData = 1;
-                switch (searchedData) {
-                    case 1: //Buscar por ID
-                        /*Se le tiene que pedir una ID*/
-                        findById(id);
-                        break;
-                    case 2: //Buscar por nombre
-                        /*Se le tiene que pedir un nombre*/
-                        findByName(name);
-                        break;
-                    case 3: //Buscar por Categoria
-                        /*Se le tiene que pedir una Categoria*/
-                        findByCategory(category);
-                        break;
-                    default:
-                        /*fallo de poner numero*/
-                }
-                break;
-            case 3:
-                insertFavorite(id, name, category);
-                break;
-            case 4:
-                break;
-            case 5:
-                deleteFavorite(id);
-                break;
-            default:
-                /* Aqui hay que hablar con javi para que salga un cartelito de opcion no valida en la vista*/
-        }
+    public String toString() {
+        return "Library{" +
+                "favorite=" + Arrays.toString(favorite) +
+                '}';
     }
 
     /**
@@ -106,6 +95,7 @@ public class Library<T> implements ILibrary {
 
     /**
      * Se le pasa el tipo de categoria que es y te devuelve todas las ubicaciones que tienen esa categoria
+     *
      * @param category se le pasa una categoria para que filtre solo las que este en esta
      * @return devuelve todas las posiciones que tengan la categoria concreta
      */
@@ -130,26 +120,46 @@ public class Library<T> implements ILibrary {
     }
 
     @Override
-    public void insertFavorite(int id, String name, String category) {
+    public boolean insertFavorite(Favorite favorite) {
         boolean empty = false;      //empty significa vacio
-        for (int i = 0; i < favorite.length; i++) {
-            if (favorite[i].getId() == -1) {
-                favorite[i].setId(id);
-                favorite[i].setname(name);
-                favorite[i].setcategory(category);
+        if (getPosFavorite(favorite) == -1) {
+            for (int i = 0; i < this.favorite.length && !empty; i++) {
+                if (this.favorite[i] == null) {
+                    this.favorite[i] = favorite;
+                    empty = true;
+                }
             }
         }
-
+        return empty;
     }
 
+    private int getPosFavorite(Favorite f) {
+        int result = -1;
+        for (int i = 0; i < favorite.length; i++) {
+            if (favorite[i] != null && favorite[i].equals(f)) {
+                result = i;
+                break;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Se borra todo el favorito con su id
+     *
+     * @param id es con lo que se va a localizar un favorite y borrarse
+     */
     @Override
-    public void deleteFavorite(int id) {
-        for (int i = 0; i < favorite.length; i++) {
-            if (favorite[i].getId() == id) {
-                favorite[i].setId(0);
-                favorite[i].setname(null);
-                favorite[i].setcategory(null);
-            }
+    public Favorite deleteFavorite(String n) {
+
+        Favorite result = null;
+        int pos = getPosFavorite(new Favorite(n, 0));
+        if (pos != -1) {
+            result = favorite[pos];
+            favorite[pos] = null;
         }
+        return result;
+
     }
+
 }

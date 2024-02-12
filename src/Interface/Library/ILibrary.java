@@ -1,8 +1,12 @@
 package Interface.Library;
 
+import Model.Entity.Favorite;
+
+
 public interface ILibrary {
     //Opciones obligatorias
-    public void crud(int opcion);
+
+    public String toString();
 
     // 1 listar && 2 buscar:
 
@@ -17,11 +21,14 @@ public interface ILibrary {
 
 
     // 3 insertar
-    public void insertFavorite(int id, String name, String category);
+
 
     // 4 actualizar
 
+    void insertFavorite(int id, String name, String category, String genre, int n, String s);
+
+    void insertFavorite(Favorite favorite);
+
     // 5 borrar
     public void deleteFavorite(int id);
-
 }

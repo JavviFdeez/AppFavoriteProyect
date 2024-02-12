@@ -6,11 +6,20 @@ public class Favorite {
     protected int id;
     protected String name;
     protected String category;
+    protected String genre;
 
-    public Favorite(int id, String name, String category) {
+    public Favorite(){
+        this.id = -1;
+        this.name = null;
+        this.category = null;
+        this.genre = null;
+    }
+    public Favorite(int id, String name, String category, String genre) {
         this.id = id;
         this.name = name;
         this.category = category;
+        this.genre = genre;
+
     }
 
     public int getId() {
@@ -37,6 +46,14 @@ public class Favorite {
         this.category = category;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -52,6 +69,34 @@ public class Favorite {
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 '}';
+    }
+
+
+    public Movie createFavoriteMovie(int duration, String company) {
+        return new Movie(id ,name, category, genre, duration, company);
+    }
+    public Song createFavoriteSong(int duration, String nameArtist) {
+        return new Song(id ,name, category,genre , duration, nameArtist);
+    }
+    public Game createFavoriteGame(String company, int price) {
+        return new Game(id ,name, category, genre, company, price);
+    }
+
+    public void dateCreate(int i,int n, String s){          //n es significado numero y s String
+        switch (category){
+            case "song":
+            case "Song":
+                createFavoriteSong(n, s);
+                break;
+            case "movie":
+            case "Movie":
+                createFavoriteMovie(n, s);
+                break;
+            case "game":
+            case "Game":
+                createFavoriteGame(s, n);
+                break;
+        }
     }
 }
 
