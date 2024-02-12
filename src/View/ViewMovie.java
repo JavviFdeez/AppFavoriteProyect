@@ -71,8 +71,6 @@ public class ViewMovie implements IViewMovie {
     }
 
 
-
-
     /**
      * @author Javier Fernández
      * Método para mostrar un mensaje de despedida de la vista Game
