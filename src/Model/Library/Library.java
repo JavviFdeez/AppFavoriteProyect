@@ -6,10 +6,10 @@ import Model.Entity.Favorite;
 import java.util.Arrays;
 
 public class Library implements ILibrary {
-    private static final int TAM = 30
+    private static final int TAM = 30;
     private Favorite[] favorite;
 
-    public Favorite[] Library() {
+    public Library() {
         favorite = new Favorite[TAM];
     }
 
@@ -150,10 +150,10 @@ public class Library implements ILibrary {
      * @param id es con lo que se va a localizar un favorite y borrarse
      */
     @Override
-    public Favorite deleteFavorite(String n) {
+    public Favorite deleteFavorite(int id, String name, String category, String genre) {
 
         Favorite result = null;
-        int pos = getPosFavorite(new Favorite(n, 0));
+        int pos = getPosFavorite(new Favorite(id, name, category, genre));
         if (pos != -1) {
             result = favorite[pos];
             favorite[pos] = null;

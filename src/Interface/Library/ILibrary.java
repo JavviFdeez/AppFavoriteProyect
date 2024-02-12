@@ -25,10 +25,10 @@ public interface ILibrary {
 
     // 4 actualizar
 
-    void insertFavorite(int id, String name, String category, String genre, int n, String s);
 
-    void insertFavorite(Favorite favorite);
+
+    boolean insertFavorite(Favorite favorite);
 
     // 5 borrar
-    public void deleteFavorite(int id);
+    Favorite deleteFavorite(int id, String name, String category, String genre);
 }
