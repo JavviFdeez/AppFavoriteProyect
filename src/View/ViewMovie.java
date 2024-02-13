@@ -70,6 +70,7 @@ public class ViewMovie implements IViewMovie {
         }
     }
 
+
     /**
      * @author Javier Fernández
      * Método para mostrar un menu de 5 opciones para elegir

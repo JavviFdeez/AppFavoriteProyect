@@ -13,6 +13,7 @@ public class ViewGame implements IViewGame {
      * Method to display a Game view welcome message
      */
 
+
     @Override
     public void displayMessageWelcome() {
         System.out.println("╔════════════════════════════════════════════════════════════════════════════╗");

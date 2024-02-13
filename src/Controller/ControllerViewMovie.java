@@ -31,7 +31,6 @@ public class ControllerViewMovie implements IControllerViewMovie {
         viewMovie.displayMessageWelcome();
         viewMovie.displayMenuMovie();
         viewMovie.displayMenuMovieList();
-        library.insertFavorite(favorite);
         String userInput = utils.handleUserInput();
 
         try {
@@ -41,12 +40,10 @@ public class ControllerViewMovie implements IControllerViewMovie {
                 case 1:
                     // Lógica para listar películas
                     System.out.println("\uD83D\uDCCB Listar películas...");
-                    viewMovie.displayMenuMovieList();
                     break;
                 case 2:
                     // Lógica para buscar películas
                     System.out.println("\uD83D\uDD0D Buscar películas...");
-                    libra
                     break;
                 case 3:
                     // Lógica para insertar películas
