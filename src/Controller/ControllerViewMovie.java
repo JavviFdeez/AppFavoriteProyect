@@ -1,14 +1,18 @@
 package Controller;
 
 import Interface.Controller.IControllerViewMovie;
+import Model.Entity.Favorite;
+import Model.Library.Library;
 import Utils.Utils;
 import View.ViewMovie;
 
 public class ControllerViewMovie implements IControllerViewMovie {
     private ViewMovie viewMovie;
+    private Library library;
 
     public ControllerViewMovie() {
         this.viewMovie = new ViewMovie();
+        this.library = new Library();
     }
 
     /**
@@ -25,6 +29,9 @@ public class ControllerViewMovie implements IControllerViewMovie {
     public void crudMovie() {
         Utils utils = new Utils();
         viewMovie.displayMessageWelcome();
+        viewMovie.displayMenuMovie();
+        viewMovie.displayMenuMovieList();
+        library.insertFavorite(favorite);
         String userInput = utils.handleUserInput();
 
         try {
@@ -34,10 +41,12 @@ public class ControllerViewMovie implements IControllerViewMovie {
                 case 1:
                     // Lógica para listar películas
                     System.out.println("\uD83D\uDCCB Listar películas...");
+                    viewMovie.displayMenuMovieList();
                     break;
                 case 2:
                     // Lógica para buscar películas
                     System.out.println("\uD83D\uDD0D Buscar películas...");
+                    libra
                     break;
                 case 3:
                     // Lógica para insertar películas

@@ -70,6 +70,23 @@ public class ViewMovie implements IViewMovie {
         }
     }
 
+    /**
+     * @author Javier Fernández
+     * Método para mostrar un menu de 5 opciones para elegir
+     * Method to display a menu of 6 options to choose from
+     */
+    public void displayMenuMovieList() {
+        // Muestra el menu
+        System.out.println();
+        System.out.println("╔══════════════════════════════════════╗");
+        System.out.println("║          === MENÚ LIST ===           ║");
+        System.out.println("║ = [1]. Listar todo                   ║");
+        System.out.println("║ == [2]. Listar por ID                ║");
+        System.out.println("║ === [3]. Listar por nombre           ║");
+        System.out.println("║ ==== [4]. Listar por Categoria       ║");
+        System.out.println("║ ====== [5]. Volver Menu Game \uD83D\uDD19️ ║");
+        System.out.println("╚══════════════════════════════════════╝");
+    }
 
     /**
      * @author Javier Fernández

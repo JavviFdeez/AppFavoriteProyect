@@ -4,4 +4,5 @@ public interface IViewSong {
     void displayMessageWelcome();
     void displayMenuSong();
     void displayMessageGoodbye();
+
 }

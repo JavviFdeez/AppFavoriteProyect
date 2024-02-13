@@ -4,4 +4,5 @@ public interface IViewMovie {
     void displayMessageWelcome();
     void displayMenuMovie();
     void displayMessageGoodbye();
+
 }

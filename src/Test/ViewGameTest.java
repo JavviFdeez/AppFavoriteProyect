@@ -8,7 +8,6 @@ public class ViewGameTest {
 
     @Test
     public void testGame() {
-<<<<<<< HEAD
         // Crear una instancia de ViewGame y llamar al método a probar
         IViewGame viewGame = new ViewGame();
          viewGame.displayMessageWelcome();
@@ -17,8 +16,3 @@ public class ViewGameTest {
     }
 }
 
-=======
-
-    }
-}
->>>>>>> 453076fee678a5693288956c6a3ce4feebcda78b
